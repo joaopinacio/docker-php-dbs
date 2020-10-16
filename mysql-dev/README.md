@@ -1,5 +1,5 @@
-To run initial scripts in db delete all files in data directory (./postgres/data)
-See more in: https://hub.docker.com/_/postgres
+To run initial scripts in db delete all files in data directory (./mysql/data)
+See more in: https://hub.docker.com/_/mysql
 
 Docker Commands for clean your containers.
 stop all containers:

@@ -1,5 +1,7 @@
-To run initial scripts in db delete all files in data directory (./postgres/data)
-See more in: https://hub.docker.com/_/postgres
+ORACLE ISN'T WORKING YET !!!
+
+To run initial scripts in db delete all files in data directory (./oracle/data)
+See more in: https://hub.docker.com/_/oracle
 
 Docker Commands for clean your containers.
 stop all containers:
