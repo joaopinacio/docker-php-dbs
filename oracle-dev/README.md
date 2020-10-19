@@ -1,8 +1,3 @@
-ORACLE ISN'T WORKING YET !!!
-
-To run initial scripts in db delete all files in data directory (./oracle/data)
-See more in: https://hub.docker.com/_/oracle
-
 Docker Commands for clean your containers.
 stop all containers:
     docker kill $(docker ps -q)
@@ -12,3 +7,11 @@ remove all containers
 
 remove all docker images
     docker rmi $(docker images -q)
+
+Credentials Database:
+    hostname: localhost
+    port: 1521
+    sid (dbname): xe
+    service name: xe
+    username: system
+    password: oracle

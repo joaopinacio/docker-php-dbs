@@ -9,45 +9,26 @@ services:
     ports:
       - "8080:80"
     depends_on:
-      - mysql
+      - oracle
     tty: true
     stdin_open: true
     networks:
       - main-network
 
-  # postgres:
-  #   container_name: postgresql
-  #   build:
-  #     context: ./postgres
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "5432:5432"
-  #   volumes:
-  #     - ./postgres/data/:/var/lib/postgresql/data
-  #     - ./postgres/scripts/:/docker-entrypoint-initdb.d/     
-  #   environment:
-  #     POSTGRES_USER: root
-  #     POSTGRES_PASSWORD: root
-  #     POSTGRES_DB: postgres
-  #   networks:
-  #     - main-network
-    
-  mysql:
-    container_name: mysql
-    restart: always
+  oracle:
+    container_name: oracle
     build:
-      context: ./mysql
+      context: ./oracle
       dockerfile: Dockerfile
     ports:
-      - "3306:3306"
+        - 1521:1521
     volumes:
-      - ./mysql/data/:/var/lib/mysql
-      - ./mysql/scripts/:/docker-entrypoint-initdb.d/     
+        - ./oracle/data/:/u01/app/oracle
+        - ./oracle/scripts/:/docker-entrypoint-initdb.d/
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+        - ORACLE_ALLOW_REMOTE=true
+        - WEB_CONSOLE=false
+        - ORACLE_SID=xe
     networks:
       - main-network
 
