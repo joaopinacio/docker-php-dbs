@@ -31,6 +31,7 @@ Examples: 1-init.sql, 2-init.sql, 3-init.sql, ...
 
 ## Credentials
 Credentials Database:
+
     hostname: localhost
     port: 3306
     dbname: mysql
@@ -38,6 +39,7 @@ Credentials Database:
     password: root
 
 Credentials for PHP:
+
     $host     = "mysql"; // Container's Name
     $dbname   = "mysql";
     $user     = "root";
