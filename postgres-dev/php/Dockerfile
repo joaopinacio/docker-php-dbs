@@ -21,3 +21,5 @@ RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
 
 RUN chown -R root:www-data /var/www/html
 RUN chmod u+rwx,g+rx,o+rx /var/www/html
+
+RUN a2enmod rewrite

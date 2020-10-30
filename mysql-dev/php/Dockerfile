@@ -20,4 +20,4 @@ RUN docker-php-ext-install \
 RUN chown -R root:www-data /var/www/html
 RUN chmod u+rwx,g+rx,o+rx /var/www/html
 
-EXPOSE 9000
+RUN a2enmod rewrite

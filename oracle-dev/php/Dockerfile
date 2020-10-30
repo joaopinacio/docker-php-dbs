@@ -40,3 +40,5 @@ RUN chown -R root:www-data /var/www/html
 RUN chmod u+rwx,g+rx,o+rx /var/www/html
 
 ENV LD_LIBRARY_PATH /usr/local/instantclient/
+
+RUN a2enmod rewrite
