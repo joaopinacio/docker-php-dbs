@@ -5,12 +5,15 @@ Open your docker-compose.yml file to edit for your taste - ;D
 
 ## Important Docker Commands
 To turn on all container's:
+
 ```docker-compose up```
 
 To list all container's (to see the id's):
+
 ```docker ps```
 
 To enter in a Container:
+
 ```docker exec -it [container-id] bash```
 
 ### Load Dump (Database Scripts)
@@ -25,6 +28,7 @@ Examples: 1-init.sql, 2-init.sql, 3-init.sql, ...
 
 ## Credentials
 Credentials Database:
+
     hostname: localhost
     port: 1521
     sid (dbname): xe
@@ -33,6 +37,7 @@ Credentials Database:
     password: oracle
 
 Credentials for PHP:
+
     $host     = "oracle"; // Container's Name
     $dbname   = "xe";
     $user     = "system";
@@ -41,9 +46,15 @@ Credentials for PHP:
 
 ## Docker Commands
 Docker Commands for clean your containers.
-    Stop all containers:
-    ```docker kill $(docker ps -q)```
-    Remove all containers
-    ```docker rm $(docker ps -a -q)```
-    Remove all docker images
-    ```docker rmi $(docker images -q)```
+
+Stop all containers:
+
+```docker kill $(docker ps -q)```
+    
+Remove all containers
+
+```docker rm $(docker ps -a -q)```
+    
+Remove all docker images
+
+```docker rmi $(docker images -q)```
