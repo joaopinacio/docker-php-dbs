@@ -8,12 +8,15 @@ Open your docker-compose.yml file to edit for your taste - ;D
 
 ## Important Docker Commands
 To turn on all container's:
+
 ```docker-compose up```
 
 To list all container's (to see the id's):
+
 ```docker ps```
 
 To enter in a Container:
+
 ```docker exec -it [container-id] bash```
 
 ### Load Dump (Database Scripts)
@@ -42,9 +45,15 @@ Credentials for PHP:
 
 ## Docker Commands
 Docker Commands for clean your containers.
-    Stop all containers:
-    ```docker kill $(docker ps -q)```
-    Remove all containers
-    ```docker rm $(docker ps -a -q)```
-    Remove all docker images
-    ```docker rmi $(docker images -q)```
+
+Stop all containers:
+
+```docker kill $(docker ps -q)```
+    
+Remove all containers
+
+```docker rm $(docker ps -a -q)```
+    
+Remove all docker images
+
+```docker rmi $(docker images -q)```
