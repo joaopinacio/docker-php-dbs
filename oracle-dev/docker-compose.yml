@@ -8,6 +8,8 @@ services:
       - ./html/:/var/www/html
     ports:
       - "8080:80"
+    extra_hosts: 
+      - "localhost:192.168.x.x" # Put your Ipv4 !!!
     depends_on:
       - oracle
     tty: true
