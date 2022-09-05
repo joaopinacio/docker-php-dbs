@@ -1,4 +1,4 @@
-version: '3.1'
+version: '3.8'
 services:
   php:
     build:
@@ -8,8 +8,8 @@ services:
       - ./html/:/var/www/html
     ports:
       - "8080:80"
-    extra_hosts: 
-      - "localhost:192.168.x.x" # Put your Ipv4 !!!
+    extra_hosts:
+      - "localhost:192.168.15.181" # Put your Ipv4 !!!
     depends_on:
       - oracle
     tty: true
@@ -23,17 +23,21 @@ services:
       context: ./oracle
       dockerfile: Dockerfile
     ports:
-        - 1521:1521
+      - 1521:1521
     volumes:
-        - ./oracle/data/:/u01/app/oracle
-        - ./oracle/scripts/:/docker-entrypoint-initdb.d/
+      - mydata:/u01/app/oracle
+      - ./oracle/scripts/:/docker-entrypoint-initdb.d/
     environment:
-        - ORACLE_ALLOW_REMOTE=true
-        - WEB_CONSOLE=false
-        - ORACLE_SID=xe
+      - ORACLE_ALLOW_REMOTE=true
+      - WEB_CONSOLE=false
+      - ORACLE_SID=xe
     networks:
       - main-network
 
+volumes:
+  mydata:
+    external: true
+
 networks:
-    main-network:
-        driver: bridge
+  main-network:
+    driver: bridge

@@ -3,9 +3,11 @@
 ## Important (!!!)
 Open your docker-compose.yml file to edit for your taste - ;D
 
+Create docker volume before turn on the container at the first time!!! 
+``` docker volume create --name=mydata```
+
 ## Important Docker Commands
 To turn on all container's:
-
 ```docker-compose up```
 
 To list all container's (to see the id's):
@@ -18,7 +20,6 @@ To enter in a Container:
 
 ### Load Dump (Database Scripts)
 Before you turn on your container's: 
-- Delete all files in data directory (./oracle/data)
 - Put your dump file in the folder "scripts" with the name "1-init.sql"
 
 If you want add some more scripts:

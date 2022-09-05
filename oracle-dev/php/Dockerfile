@@ -1,16 +1,16 @@
-FROM php:7.2-apache
+FROM php:8.1-apache
 
 # Install PHP extensions deps
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
-        unzip \
-        curl \
-        openssl \
-        nano \
-        zlib1g-dev \
-        libaio1 \
-        libaio-dev \
-        libpq-dev
+    unzip \
+    curl \
+    openssl \
+    nano \
+    zlib1g-dev \
+    libaio1 \
+    libaio-dev \
+    libpq-dev
 
 # Install Oracle Instantclient
 ADD instantclient-basic-linux.x64-12.1.0.2.0.zip /opt/oracle/instantclient-basic-linux.x64-12.1.0.2.0.zip
@@ -31,10 +31,10 @@ RUN unzip /opt/oracle/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /opt/oracl
 RUN echo 'instantclient,/opt/oracle/instantclient_12_1/' | pecl install oci8 \
     && docker-php-ext-configure pdo_oci --with-pdo-oci=instantclient,/opt/oracle/instantclient_12_1,12.1 \
     && docker-php-ext-install \
-            pdo \
-            pdo_oci \
+    pdo \
+    pdo_oci \
     && docker-php-ext-enable \
-            oci8
+    oci8
 
 RUN chown -R root:www-data /var/www/html
 RUN chmod u+rwx,g+rx,o+rx /var/www/html
